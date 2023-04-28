@@ -9,8 +9,8 @@ Expanded getContainer(Color clr, [flx = 1]) {
   return Expanded(
     flex: flx,
     child: Container(
+      margin: EdgeInsets.all(2),
       color: clr,
-      margin: EdgeInsets.all(5.0),
     ),
   );
 }
@@ -21,48 +21,40 @@ class _Design_2State extends State<Design_2> {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Column(
-            children: [
-              //first column
-              Expanded(
-                flex: 4,
-                child: Row(
-                  children: [
-                    Image.asset(
-                      "assets/photos/daksh.jpg",
-                      fit: BoxFit.cover,
-                      width: 200,
-                    ),
-                    // getContainer(Colors.lightBlue, 2),
-                    getContainer(Colors.black, 5),
-                    Expanded(
-                      flex: 3,
-                      child: Column(
-                        children: [
-                          getContainer(Colors.orange),
-                          getContainer(Colors.blue),
-                          getContainer(Colors.orange),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+            //1 row
+            child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                children: [
+                  getContainer(Color.fromARGB(255, 140, 134, 134), 2),
+                  getContainer(Colors.orangeAccent, 2),
+                  getContainer(Colors.blue, 3),
+                ],
               ),
-              //second column
-              Expanded(
-                child: Row(
-                  children: [
-                    getContainer(Colors.red),
-                    getContainer(Colors.amber),
-                    getContainer(Colors.white),
-                  ],
-                ),
+            ),
+            //2 row
+            Expanded(
+              child: Column(
+                children: [
+                  getContainer(Color.fromARGB(255, 113, 30, 4), 2),
+                  getContainer(Colors.green, 2),
+                  getContainer(Color.fromARGB(255, 139, 171, 204)),
+                ],
               ),
-              //third column
-              getContainer(Colors.yellow),
-            ],
-          ),
-        ),
+            ),
+            //3 row
+            Expanded(
+              child: Column(
+                children: [
+                  getContainer(Color.fromARGB(255, 186, 55, 7)),
+                  getContainer(Colors.amber, 3),
+                  getContainer(Color.fromARGB(255, 159, 10, 120), 2),
+                ],
+              ),
+            ),
+          ],
+        )),
       ),
     );
   }
